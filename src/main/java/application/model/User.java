@@ -1,10 +1,20 @@
 package application.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class User {
-    long id;
-    String name;
-    String password;
-    int age;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column
+    private String name;
+    @Column
+    private String password;
+    @Column
+    private int age;
 
     public User() {
     }
@@ -13,6 +23,38 @@ public class User {
         this.id = id;
         this.name = name;
         this.password = password;
+        this.age = age;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
         this.age = age;
     }
 }
