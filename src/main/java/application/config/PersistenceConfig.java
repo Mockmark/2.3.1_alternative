@@ -24,7 +24,7 @@ public class PersistenceConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/db");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/db2.3.1");
         dataSource.setUsername("AAAA");
         dataSource.setPassword("impish donator versus uncouple bath subside");
         return dataSource;
@@ -59,7 +59,7 @@ public class PersistenceConfig {
 
     Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "create");
+        properties.setProperty("hibernate.hbm2ddl.auto", "update");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
         properties.setProperty("hibernate.show_sql", "true");
 

@@ -3,8 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Users</title>
+    <style>
+        body {
+            background-color: darkslategray;
+            color: lightgray
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
-
+<div th:if="${ not#lists.isEmpty(users)}">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Age</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.age}"></td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

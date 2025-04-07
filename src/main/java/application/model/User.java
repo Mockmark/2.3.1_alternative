@@ -12,17 +12,16 @@ public class User {
     @Column
     private String name;
     @Column
-    private String password;
+    private String email;
     @Column
     private int age;
 
     public User() {
     }
 
-    public User(long id, String name, String password, int age) {
-        this.id = id;
+    public User(String name, String email, int age) {
         this.name = name;
-        this.password = password;
+        this.email = email;
         this.age = age;
     }
 
@@ -42,12 +41,12 @@ public class User {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getAge() {
