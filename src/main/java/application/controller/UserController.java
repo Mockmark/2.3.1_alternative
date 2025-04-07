@@ -16,10 +16,10 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping(value = "/index")
-    public String printUsers(Model model) {
-        return "index";
-    }
+//    @GetMapping(value = "/index")
+//    public String printUsers(Model model) {
+//        return "index";
+//    }
 
     @PostMapping(value = "/add")
     public String addUser(@RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("age") int age, Model model) {
