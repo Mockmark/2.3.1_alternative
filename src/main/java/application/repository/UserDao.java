@@ -8,11 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserDao {
     @PersistenceContext
-    private final EntityManager entityManager;
-
-    public UserDao(EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
+    private EntityManager entityManager;
 
     public void addUser(User user) {
         entityManager.persist(user);
