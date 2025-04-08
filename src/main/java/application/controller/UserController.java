@@ -1,7 +1,7 @@
 package application.controller;
 
 import application.model.User;
-import application.service.UserService;
+import application.service.ServiceProv;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +13,9 @@ import java.util.List;
 
 @Controller
 public class UserController {
-    UserService userService;
+    ServiceProv userService;
 
-    UserController(UserService userService) {
+    UserController(ServiceProv userService) {
         this.userService = userService;
     }
 
