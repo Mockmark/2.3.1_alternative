@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add User</title>
+    <title>Edit User</title>
     <style>
         body {
             background-color: darkslategray;
@@ -11,7 +11,9 @@
     </style>
 </head>
 <body>
-<form th:method="POST" th:action="@{/index}" th:object="${user}">
+<form th:method="POST" th:action="@{/edit}" th:object="${userToEdit}">
+
+    <input type="hidden" th:field="*{id}"/>
 
     <label for="name">Name</label>
     <input type="text" th:field="*{name}" id="name" name="name" placeholder="Enter your name">
@@ -28,7 +30,7 @@
 
     <br>
 
-    <input type="submit" value="Add User">
+    <input type="submit" value="Accept Changes">
 
 </form>
 </body>

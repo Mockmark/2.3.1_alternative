@@ -21,4 +21,12 @@ public class UserDao {
         TypedQuery<User> HQL = entityManager.createQuery("FROM User", User.class);
         return HQL.getResultList();
     }
+
+    public User getUserById(int id) {
+        return entityManager.find(User.class, id);
+    }
+
+    public void updateUser(User user) {
+        entityManager.merge(user);
+    }
 }

@@ -24,4 +24,15 @@ public class UserService {
     public List<User> index() {
         return userDao.index();
     }
+
+    @Transactional
+    public User getUserById(int id) {
+        return userDao.getUserById(id);
+    }
+
+    @Transactional
+    public void updateUser(User user) {
+        userDao.updateUser(user);
+    }
+
 }
