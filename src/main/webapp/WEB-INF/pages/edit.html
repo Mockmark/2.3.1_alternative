@@ -8,9 +8,28 @@
             background-color: darkslategray;
             color: lightgray
         }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        a {
+            color: gold;
+            text-decoration: none;
+            background-color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+        }
+
     </style>
 </head>
-<body>
+<body class="container">
 <form th:method="POST" th:action="@{/edit}" th:object="${userToEdit}">
 
     <input type="hidden" th:field="*{id}"/>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Users</title>
     <style>
-
         body {
             background-color: darkslategray;
             color: lightgray
@@ -20,9 +19,17 @@
             background-color: black;
         }
 
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+        }
+
     </style>
 </head>
-<body>
+<body class="container">
 <div th:if="${ not#lists.isEmpty(users)}">
     <table>
         <tr>
@@ -35,7 +42,7 @@
             <td th:text="${user.name}"></td>
             <td th:text="${user.email}"></td>
             <td th:text="${user.age}"></td>
-            <td> <a th:href="@{/edit(id=${user.id})}">change</a> </td>
+            <td><a th:href="@{/edit(id=${user.id})}">change</a></td>
         </tr>
     </table>
 </div>
