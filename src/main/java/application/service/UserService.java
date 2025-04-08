@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class UserService {
-    private UserDao userDao;
+    private final UserDao userDao;
 
     public UserService(UserDao userDao) {
         this.userDao = userDao;
@@ -20,12 +20,12 @@ public class UserService {
         userDao.addUser(user);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public List<User> index() {
         return userDao.index();
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public User getUserById(int id) {
         return userDao.getUserById(id);
     }
@@ -35,4 +35,8 @@ public class UserService {
         userDao.updateUser(user);
     }
 
+    @Transactional
+    public void deleteUser(int id) {
+        userDao.deleteUser(id);
+    }
 }

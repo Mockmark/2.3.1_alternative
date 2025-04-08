@@ -29,4 +29,9 @@ public class UserDao {
     public void updateUser(User user) {
         entityManager.merge(user);
     }
+
+    public void deleteUser(int id) {
+        User user = entityManager.find(User.class, id);
+        entityManager.remove(user);
+    }
 }
