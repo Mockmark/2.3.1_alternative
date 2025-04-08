@@ -21,7 +21,7 @@ public class UserController {
     }
 
 //    @GetMapping(value = "/index")
-//    public String printUsers(Model model) {
+//    public String index(Model model) {
 //        return "index";
 //    }
 
@@ -29,16 +29,14 @@ public class UserController {
 //    public String addUser(@RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("age") int age, Model model) {
 //        User user = new User(name, email, age);
 //        userService.addUser(user);
-//        return "redirect:/index";
+//        model.addAttribute("user", user);
+//        return "index";
 //    }
 
     @GetMapping(value = "/index")
-    public String printWelcome(ModelMap model) {
-        List<String> messages = new ArrayList<>();
-        messages.add("Alternative");
-        messages.add("Spring MVC application");
-        messages.add("Alternative");
-        model.addAttribute("messages", messages);
+    public String index(ModelMap model) {
+        List<User> users = userService.index();
+        model.addAttribute("users", users);
         return "index";
     }
 }

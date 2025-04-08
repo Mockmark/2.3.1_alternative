@@ -15,17 +15,19 @@
     </style>
 </head>
 <body>
-<div th:if="${ not#lists.isEmpty(messages)}">
+<div th:if="${ not#lists.isEmpty(users)}">
     <table>
         <tr>
             <th>Name</th>
             <th>E-mail</th>
             <th>Age</th>
+            <th>Action</th>
         </tr>
-        <tr th:each="user : ${messages}">
-            <td th:text="${user}"></td>
-            <td th:text="${user}"></td>
-            <td th:text="${user}"></td>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.age}"></td>
+            <td> <a th:href="@{/index/{id}(id=${user.getId()})}">change</a> </td>
         </tr>
     </table>
 </div>
